@@ -1,8 +1,7 @@
-/* TEMA4 PROTOCOALE DE COMUNICATII ANCA-MARIA COLACEL 324CC /*
-/* Client Web. Comunicaţie cu REST API. /*
+# TEMA4 PROTOCOALE DE COMUNICATII ANCA-MARIA COLACEL 324CC /
+# Client Web. Comunicaţie cu REST API. 
 
-
---ORGANIZARE--
+**ORGANIZARE**
 Implementarea acestei teme a durat aproximativ 2 zile. Mi s-a parut cea mai usoara tema dintre toate cele 4 propuse la aceasta materie. Am pornit cu implementarea de la laboratorul 9, care a fost de mare ajutor in intelegerea notiunilor legate de acest protocol. In cele ce urmeaza voi detalia modul de implementare al temei si gandirea abordata.
 Am implementat fisierul client.c in care este implementarea efectiva a temei si am imbunatatit fisierele requests.c si requests.h din scheletul de laborator. Tema mai contine de asemenea si fisierele helpers.c si helpers.h si buffer.c si buffer.h.
 Modificarile aduse in requests.c se refera la adaugarea cookiu-urilor, a headerului Authorization precum si crearea functiei compute_delete_request, necesara pentru trimiterea cererii de delete_book.
@@ -11,7 +10,7 @@ In client.c lucrez intr-o bucla infinita in care citesc de la tastatura si inter
 Mai departe am implementat comanda get_books care foloseste o cerere GET avand ca si parametru si tokenul obtinut anterior pentru a demonstra accesul. Pentru a parsa id-ul si titlul pentru fiecare carte in parte mi-am creat o functie de parsare. Aceasta face strtok pe string-ul ce contine multimea de jsoane folosind o lista de delimitatori, apoi compara tokenul pe rand cu id si title si extrage valorile acestora pentru a fi printate. Urmeaza get_book care citeste si ID-ul unei carti dorite, verific ca e format doar din cifre, fac o cerere de tip GET apoi parsez tipurile de mesaje de eroare si printez texte potrivite la stdout. Pentru a parsa toate campurile jsonului pentru acea carte am creat o alta functie de parsare foarte asemenatoare cu cea de mai sus doar ca iau pe rand toate cele 5 campuri nu doar id si titlu.  La add_book imi citesc toate notiunile necesare despre o carte, creez buffer json si fac cerere POST. Am verificat ca numarul de pagini sa fie format doar din cifre si am printat mesaje pentru aceasta posibilitate si am verificat ca numele autorului sa nu contina cifre. Pentru aceste verificari mi-am creat niste functii auxiliare simple. La delete citesc ID-ul cartii pe care vreau sa o sterg, il verific sa fie numar si folosesc o cerere de tip DELETE. Urmeaza logout care necesita o cerere de tip GET si eliberez memoria pentru cookie si token ca sa nu mai pot avea acces la biblioteca si sa aiba sens delogarea. In final, comanda exit inchide executia aplicatiei.
 
 
---ALTE OBSERVATII --
+**ALTE OBSERVATII**
 -legat de folosirea bibliotecii json-c, aceasta a fost descarcata folosind comanda sudo apt-get install libjson-c-dev, fisierul makefile este si el completat pentru a compila fisierele mele legand si aceasta biblioteca
 -tema a fost interesanta, nu a necesitat multa documentatie suplimentara si a ajutat la o intelegere aprofundata a protocolului HTTP.
 
