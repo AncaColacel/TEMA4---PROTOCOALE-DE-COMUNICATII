@@ -15,7 +15,7 @@ Mai departe am implementat comanda get_books care foloseste o cerere GET avand c
 -tema a fost interesanta, nu a necesitat multa documentatie suplimentara si a ajutat la o intelegere aprofundata a protocolului HTTP.
 
 
-**BIBLIOGRAFI**
+**BIBLIOGRAFIE**
 - laboratorul 9, breaviarul teoretic si rezolvarea exercitiilor
 - cursurile aferente protocolului HTTP
 - https://en.wikipedia.org/wiki/HTTP
